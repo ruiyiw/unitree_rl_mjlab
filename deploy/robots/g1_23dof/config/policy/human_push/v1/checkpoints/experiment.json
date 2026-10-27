@@ -1,0 +1,131 @@
+{
+  "status": "selected_final_policy",
+  "task": "Mjlab-Human-Push-Recovery-G1-23DoF",
+  "robot": {
+    "variant": "unitree_g1_23dof",
+    "actuated_dof": 23,
+    "actor_observation_dim": 75,
+    "model_sha256": "eb7fadb5fe82ce22cf98a7c82750a63677dc2598746d3a84b9200e3c375da184",
+    "provenance": {
+      "repository": "https://github.com/unitreerobotics/unitree_mujoco",
+      "commit": "1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d",
+      "source": "unitree_robots/g1/g1_23dof.xml",
+      "xml_sha256": "a57de7920966fef0f845130f0f44df76be6240770d3f0ce1ac5c6f0d1c6f2f76",
+      "meshes_sha256": {
+        "pelvis.STL": "5ba6bbc888e630550140d3c26763f10206da8c8bd30ed886b8ede41c61f57a31",
+        "pelvis_contour_link.STL": "5cc5c2c7a312329e3feeb2b03d3fc09fc29705bd01864f6767e51be959662420",
+        "left_hip_pitch_link.STL": "4725168105ee768ee31638ef22b53f6be2d7641bfd7cfefe803488d884776fa4",
+        "left_hip_roll_link.STL": "91f25922ee8a7c3152790051bebad17b4d9cd243569c38fe340285ff93a97acf",
+        "left_hip_yaw_link.STL": "a16d88aa6ddac8083aa7ad55ed317bea44b1fa003d314fba88965b7ed0f3b55b",
+        "left_knee_link.STL": "8d92b9e3d3a636761150bb8025e32514c4602b91c7028d523ee42b3e632de477",
+        "left_ankle_pitch_link.STL": "d49e3abc6f5b12e532062cd575b87b5ef40cd2a3fc18f54a1ca5bba4f773d51d",
+        "left_ankle_roll_link.STL": "c4092af943141d4d9f74232f3cfa345afc6565f46a077793b8ae0e68b39dc33f",
+        "right_hip_pitch_link.STL": "e4f3c99d7f4a7d34eadbef9461fc66e3486cb5442db1ec50c86317d459f1a9c6",
+        "right_hip_roll_link.STL": "4c254ef66a356f492947f360dd931965477b631e3fcc841f91ccc46d945d54f6",
+        "right_hip_yaw_link.STL": "e479c2936ca2057e9eb2f7dff6c189b7419d7b8484dea0b298cbb36a2a6aa668",
+        "right_knee_link.STL": "63c4008449c9bbe701a6e2b557b7a252e90cf3a5abcf54cee46862b9a69f8ec8",
+        "right_ankle_pitch_link.STL": "15be426539ec1be70246d4d82a168806db64a41301af8b35c197a33348c787a9",
+        "right_ankle_roll_link.STL": "4b66222ea56653e627711b56d0a8949b4920da5df091da0ceb343f54e884e3a5",
+        "waist_yaw_link.STL": "2883f20e03f09b669b5b4ce10677ee6b5191c0934b584d7cbaef2d0662856ffb",
+        "torso_link.STL": "e96d023f0368a4e3450b86ca5d4f10227d8141156a373e7da8cb3c93266523e0",
+        "logo_link.STL": "8571a0a19bc4916fa55f91449f51d5fdefd751000054865a842449429d5f155b",
+        "head_link.STL": "d297328b3569fc85074355e76cba6c889d19de5361224bcd3c5b8ce82e13b9b6",
+        "waist_support_link.STL": "1fae9e1bb609848a1667d32eed8d6083ae443538a306843056a2a660f1b2926a",
+        "left_shoulder_pitch_link.STL": "f0d1cfd02fcf0d42f95e678eeca33da3afbcc366ffba5c052847773ec4f31d52",
+        "left_shoulder_roll_link.STL": "fb9df21687773522598dc384f1a2945c7519f11cbc8bd372a49170316d6eee88",
+        "left_shoulder_yaw_link.STL": "1aa97e9748e924336567992181f78c7cd0652fd52a4afcca3df6b2ef6f9e712e",
+        "left_elbow_link.STL": "fa752198accd104d5c4c3a01382e45165b944fbbc5acce085059223324e5bed3",
+        "left_wrist_roll_rubber_hand.STL": "e81030abd023bd9e4a308ef376d814a2c12d684d8a7670c335bbd5cd7809c909",
+        "right_shoulder_pitch_link.STL": "24cdb387e0128dfe602770a81c56cdce3a0181d34d039a11d1aaf8819b7b8c02",
+        "right_shoulder_roll_link.STL": "962b97c48f9ce9e8399f45dd9522e0865d19aa9fd299406b2d475a8fc4a53e81",
+        "right_shoulder_yaw_link.STL": "a0b76489271da0c72461a344c9ffb0f0c6e64f019ea5014c1624886c442a2fe5",
+        "right_elbow_link.STL": "1be925d7aa268bb8fddf5362b9173066890c7d32092c05638608126e59d1e2ab",
+        "right_wrist_roll_rubber_hand.STL": "0729aff1ac4356f9314de13a46906267642e58bc47f0d8a7f17f6590a6242ccf"
+      },
+      "adapted_xml_sha256": "eb7fadb5fe82ce22cf98a7c82750a63677dc2598746d3a84b9200e3c375da184",
+      "collision_template": "mjlab==1.6.0/asset_zoo/robots/unitree_g1/xmls/g1.xml",
+      "collision_template_sha256": "febdcbeffbbf84051556ae41a5ac1b43fb479a5d76bdb3f54824dbc2721c20aa",
+      "adaptation": "Official physical 23-DoF subtree; discard six detached SDK dummy joints; mjlab primitive contacts, sites, PD actuator recipe and zero passive joint friction/damping. Official joint effort limits retained."
+    }
+  },
+  "actor_hidden": [
+    256,
+    256
+  ],
+  "critic_hidden": [
+    256,
+    256
+  ],
+  "seed": 2026102956,
+  "recipe": {
+    "std_start": 0.15,
+    "std_end": 0.06,
+    "lr": 5e-05,
+    "actor_warmup": 10,
+    "load_critic": true,
+    "anchor_weight": 0.0,
+    "anneal_updates": 600,
+    "gamma": 0.995,
+    "lam": 0.97,
+    "rollout_steps": 32,
+    "start_scale": 1.0,
+    "end_scale": 1.2,
+    "curriculum_updates": 400,
+    "motion_weight": 0.2,
+    "quiet_weight": 1.0,
+    "action_rate_weight": 0.05,
+    "quiet_fraction": 0.1,
+    "two_push_fraction": 0.35,
+    "name": "adapt_056_gpu3",
+    "source": null,
+    "hard_fraction": 0.35,
+    "direction_weights": [
+      0.43000000000000005,
+      0.4,
+      0.19347826086956518,
+      0.16086956521739135,
+      0.20555555555555557,
+      0.15,
+      0.15952380952380948,
+      0.2537735849056604
+    ]
+  },
+  "source_checkpoint": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0025_adapt_025_gpu3/training/model_600.pt",
+  "source_sha256": "3a2c11a090f4732e0ea5f51220bbfbb68bab9453e2ea3378c976d32ec21bd571",
+  "num_envs": 8192,
+  "rollout_steps": 32,
+  "target_updates": 600,
+  "pid": 1216449,
+  "initialization": "warm_start_fresh_optimizer",
+  "completed_updates": 600,
+  "checkpoints": [
+    "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_200.pt",
+    "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_400.pt",
+    "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_600.pt"
+  ],
+  "elapsed_s": 1017.0554234981537,
+  "selection": {
+    "candidate": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_400.pt",
+    "candidate_sha256": "ca298fd1e906b56be26b83cd6092260dcbb6a924aa432901c5ca2d9baafd0242",
+    "final_seeds_completed": [
+      2026102803,
+      2026102804
+    ],
+    "pushed_episodes": 6516,
+    "survival": 0.9538060159607121,
+    "final_quiet": 0.9536525475751995,
+    "survival_wilson95": [
+      0.9484364256198048,
+      0.9586408260729358
+    ],
+    "target_met": true,
+    "final_test_complete": true,
+    "search_jobs": 220,
+    "search_checkpoints": 629,
+    "elapsed_hours": 7.725620699193742,
+    "caveat": "No hardware tests; success is conditional on the frozen smooth-push distribution."
+  },
+  "deployment_source": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/best_policy.pt",
+  "deployment_source_sha256": "ca298fd1e906b56be26b83cd6092260dcbb6a924aa432901c5ca2d9baafd0242",
+  "model_provenance": "Verified against archived training XML, robot code, and compiled model"
+}

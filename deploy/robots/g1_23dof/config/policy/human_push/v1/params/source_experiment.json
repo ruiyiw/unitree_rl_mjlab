@@ -1,0 +1,84 @@
+{
+  "status": "selected_final_policy",
+  "task": "Mjlab-Human-Push-Recovery-G1-23DoF",
+  "robot": {
+    "actuated_dof": 23
+  },
+  "actor_hidden": [
+    256,
+    256
+  ],
+  "critic_hidden": [
+    256,
+    256
+  ],
+  "seed": 2026102956,
+  "recipe": {
+    "std_start": 0.15,
+    "std_end": 0.06,
+    "lr": 5e-05,
+    "actor_warmup": 10,
+    "load_critic": true,
+    "anchor_weight": 0.0,
+    "anneal_updates": 600,
+    "gamma": 0.995,
+    "lam": 0.97,
+    "rollout_steps": 32,
+    "start_scale": 1.0,
+    "end_scale": 1.2,
+    "curriculum_updates": 400,
+    "motion_weight": 0.2,
+    "quiet_weight": 1.0,
+    "action_rate_weight": 0.05,
+    "quiet_fraction": 0.1,
+    "two_push_fraction": 0.35,
+    "name": "adapt_056_gpu3",
+    "source": null,
+    "hard_fraction": 0.35,
+    "direction_weights": [
+      0.43000000000000005,
+      0.4,
+      0.19347826086956518,
+      0.16086956521739135,
+      0.20555555555555557,
+      0.15,
+      0.15952380952380948,
+      0.2537735849056604
+    ]
+  },
+  "source_checkpoint": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0025_adapt_025_gpu3/training/model_600.pt",
+  "source_sha256": "3a2c11a090f4732e0ea5f51220bbfbb68bab9453e2ea3378c976d32ec21bd571",
+  "num_envs": 8192,
+  "rollout_steps": 32,
+  "target_updates": 600,
+  "pid": 1216449,
+  "initialization": "warm_start_fresh_optimizer",
+  "completed_updates": 600,
+  "checkpoints": [
+    "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_200.pt",
+    "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_400.pt",
+    "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_600.pt"
+  ],
+  "elapsed_s": 1017.0554234981537,
+  "selection": {
+    "candidate": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/jobs/0056_adapt_056_gpu3/training/model_400.pt",
+    "candidate_sha256": "ca298fd1e906b56be26b83cd6092260dcbb6a924aa432901c5ca2d9baafd0242",
+    "final_seeds_completed": [
+      2026102803,
+      2026102804
+    ],
+    "pushed_episodes": 6516,
+    "survival": 0.9538060159607121,
+    "final_quiet": 0.9536525475751995,
+    "survival_wilson95": [
+      0.9484364256198048,
+      0.9586408260729358
+    ],
+    "target_met": true,
+    "final_test_complete": true,
+    "search_jobs": 220,
+    "search_checkpoints": 629,
+    "elapsed_hours": 7.725620699193742,
+    "caveat": "No hardware tests; success is conditional on the frozen smooth-push distribution."
+  }
+}

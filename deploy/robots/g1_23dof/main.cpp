@@ -3,6 +3,7 @@
 #include "FSM/State_FixStand.h"
 #include "FSM/State_RLBase.h"
 #include "State_Mimic.h"
+#include "State_HumanPushRecovery.h"
 
 std::unique_ptr<LowCmd_t> FSMState::lowcmd = nullptr;
 std::shared_ptr<LowState_t> FSMState::lowstate = nullptr;
@@ -50,7 +51,7 @@ int main(int argc, char** argv)
 
     std::cout << "Press [L2 + Up] to enter FixStand mode.\n";
     std::cout << "And then press [R2 + A] to start controlling the robot.\n";
-    std::cout << "And then press [R1 + A/B/Y/X] to control the robot dance.\n";
+    std::cout << "Press [L2 + B] to return to Passive mode.\n";
 
     while (true)
     {

@@ -1,0 +1,15 @@
+{
+  "task": "Mjlab-Human-Push-Recovery-G1-23DoF",
+  "checkpoint_sha256": "ca298fd1e906b56be26b83cd6092260dcbb6a924aa432901c5ca2d9baafd0242",
+  "onnx_sha256": "5b386108a5edbfe095e5d6c6e6daa413247004c508733aa8c46839c4e876c512",
+  "archived_training_sources": {
+    "human_push.py": "9714b01800a4b4f2148a9b04912f8e7f4ade1e06dce9a2758688660ad2510b48",
+    "env_cfg.py": "3d943e15e4b01faef7c71fe88ce15b3214d71b07db9326b013fa190e1b107ee4",
+    "robot_cfg.py": "041797480b9b025ee93a5e004c776c48b3ae1dcba0ae0e047586ecd998c7cc21",
+    "stepping.py": "798095782548069e59cd795d83140834002962b04cf742b998ca0d70be420c37",
+    "assets/g1_23dof/g1.xml": "eb7fadb5fe82ce22cf98a7c82750a63677dc2598746d3a84b9200e3c375da184"
+  },
+  "source_checkpoint": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/best_policy.pt",
+  "source_runtime": "/home/rwang/humanoid/logs/human_push_autoresearch_20261027/search/runtime/src/humanoid_balance",
+  "frozen": true
+}

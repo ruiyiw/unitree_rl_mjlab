@@ -130,6 +130,7 @@ inline po::variables_map helper(int argc, char** argv)
         ("version,v", "show version")
         ("log", "record log file")
         ("network,n", po::value<std::string>()->default_value(""), "dds network interface")
+        ("config,c", po::value<std::string>(), "controller configuration YAML")
         ;
 
     po::variables_map vm;
@@ -145,6 +146,10 @@ inline po::variables_map helper(int argc, char** argv)
     {
         std::cout << "Version: " << VERSION << std::endl;
         exit(0);
+    }
+
+    if (vm.count("config")) {
+        config = YAML::LoadFile(std::filesystem::absolute(vm["config"].as<std::string>()).string());
     }
 
 #ifndef NDEBUG

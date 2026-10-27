@@ -1,0 +1,4 @@
+-r requirements-balance.txt
+onnx==1.23.2
+onnxscript==0.7.2
+pytest==9.1.1

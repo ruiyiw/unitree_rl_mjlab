@@ -1,0 +1,12 @@
+{
+  "source_repository": "/home/rwang/humanoid",
+  "source_files_sha256": {
+    "env_cfg.py": "3d943e15e4b01faef7c71fe88ce15b3214d71b07db9326b013fa190e1b107ee4",
+    "mdp.py": "03dc07cee756fdac01eb75e852bf380b803be317c6896d49f7b6e40cba5fc90a",
+    "rl_cfg.py": "cab0c6c4960dbaab9b138861bab771383a5f48bfcc8429d001abe631064bc38e",
+    "evaluate.py": "c1d77f004020f1fa008f1f9a26b7f25bbe5cfc11eb7901c249707c298c445ae5",
+    "robot_cfg.py": "041797480b9b025ee93a5e004c776c48b3ae1dcba0ae0e047586ecd998c7cc21",
+    "evaluate_stepping.py": "22d8a031a07d31355c4bc41a306cd71f47caf3dbfbb323aa351417e140266b1e"
+  },
+  "scope": "Preserved standing task and frozen-policy stepping evaluation. No optimizer updates or robot-model changes. Historical research training curricula are not replayed by this task."
+}

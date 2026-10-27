@@ -1,0 +1,8 @@
+# Separate runtime for the preserved balance task; stock tasks use setup.py.
+# Select a CUDA-compatible PyTorch wheel appropriate to the machine.
+mjlab==1.6.0
+mujoco==3.11.0
+mujoco-warp==3.11.0
+rsl-rl-lib==5.4.2
+warp-lang==1.18.0
+torch==2.14.1

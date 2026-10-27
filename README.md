@@ -236,3 +236,13 @@ This project would not be possible without the contributions of the following re
 - [rsl_rl](https://github.com/leggedrobotics/rsl_rl.git): reinforcement learning algorithm implementation
 - [mujoco_warp](https://github.com/google-deepmind/mujoco_warp.git): GPU-accelerated rendering and simulation interface
 - [mujoco](https://github.com/google-deepmind/mujoco.git): high-fidelity rigid-body physics engine
+
+## G1 23-DoF standing balance
+
+The preserved balance task, frozen checkpoint evaluation, and matched comparison commands are documented in [BALANCE.md](BALANCE.md). It uses a separate mjlab 1.6 runtime and entry point.
+
+## G1 23-DoF human-push recovery
+
+`Mjlab-Human-Push-Recovery-G1-23DoF` and its frozen checkpoint, ONNX actor,
+23-DoF hardware profile, and C++ simulation validator are included. See
+[HUMAN_PUSH.md](HUMAN_PUSH.md) for playback, validation and deployment.
