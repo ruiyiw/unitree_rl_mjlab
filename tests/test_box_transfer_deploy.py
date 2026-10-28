@@ -187,3 +187,36 @@ def test_native_rejects_changed_model(library, tmp_path):
     lib.bt_error.restype = ctypes.c_char_p
     assert not lib.bt_create(str(tmp_path).encode())
     assert b"identity mismatch" in lib.bt_error().lower()
+
+
+def test_native_loads_without_checkpoints_but_still_checks_runtime(
+    library, tmp_path, monkeypatch
+):
+    import json
+
+    from unitree_box_transfer import native, policy
+
+    # A checkout without ignored training data still has every deployment asset.
+    for child in POLICY_DIR.iterdir():
+        if child.name != "checkpoints":
+            (tmp_path / child.name).symlink_to(
+                child, target_is_directory=child.is_dir()
+            )
+    monkeypatch.setattr(native, "POLICY_DIR", tmp_path)
+    monkeypatch.setattr(policy, "POLICY_DIR", tmp_path)
+    core = native.NativePolicy(library)
+    try:
+        assert np.isfinite(core.tick(initial_sensors(), advance=False)[2]).all()
+    finally:
+        core.close()
+    with pytest.raises(FileNotFoundError, match="checkpoints"):
+        policy.verify_bundle()
+
+    # Omitting checkpoints must not bypass integrity checks on runtime files.
+    manifest_path = tmp_path / "manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest_path.unlink()
+    manifest["files_sha256"]["exported/navigation/policy.onnx"] = "0" * 64
+    manifest_path.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="exported/navigation/policy.onnx"):
+        native.NativePolicy(library)

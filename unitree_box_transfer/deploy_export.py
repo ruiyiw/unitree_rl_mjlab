@@ -17,7 +17,7 @@ from .policy import verify_bundle
 
 
 def export_deployment(destination):
-    verify_bundle()
+    verify_bundle(require_checkpoints=False)
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=False)
     cfg = env_cfg("put-down", 1, play=True)

@@ -15,9 +15,12 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def verify_bundle():
+def verify_bundle(*, require_checkpoints=True):
+    """Check runtime assets, optionally including local-only training checkpoints."""
     manifest = json.loads((POLICY_DIR / "manifest.json").read_text())
     for relative, expected in manifest["files_sha256"].items():
+        if not require_checkpoints and Path(relative).parts[0] == "checkpoints":
+            continue
         if sha256(POLICY_DIR / relative) != expected:
             raise ValueError(f"Box-transfer bundle file changed: {relative}")
     for relative, expected in manifest.get("assets_sha256", {}).items():

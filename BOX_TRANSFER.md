@@ -31,7 +31,7 @@ The five files under
 (`navigation.pt`, `take.pt`, `carry.pt`, `put-down.pt`, `sequence.pt`) are ignored
 by Git and remain on the original machine. On another checkout, copy these
 files into the same directory before running Python playback, evaluation,
-re-export or the full regression suite. Their expected SHA-256 values remain
+ONNX re-export or the full regression suite. Their expected SHA-256 values remain
 in `manifest.json`; archive source paths are recorded in
 `unitree_box_transfer/port_provenance.json`.
 
@@ -39,6 +39,8 @@ The small `references/*/banks/plan.pt` files contain reference motions, not
 training checkpoints, and remain versioned. ONNX graphs, native models and
 `deployment/references.bin` are also versioned, so `g1_ctrl`, its offline profile
 check and the DDS simulator do not require the excluded checkpoints.
+The Python native wrapper and native artifact re-export also work without them;
+their integrity checks still verify every versioned bundle file and robot asset.
 
 ## Simulation playback: full policy and all five phases
 

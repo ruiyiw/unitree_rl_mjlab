@@ -57,7 +57,7 @@ def build(build_dir):
 
 class NativePolicy:
     def __init__(self, library, selection="sequence"):
-        verify_bundle()
+        verify_bundle(require_checkpoints=False)
         self.lib = ctypes.CDLL(str(Path(library).resolve()))
         self.lib.bt_create.argtypes = [ctypes.c_char_p]
         self.lib.bt_create.restype = ctypes.c_void_p

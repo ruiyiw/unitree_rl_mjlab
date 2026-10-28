@@ -133,7 +133,7 @@ declaration order of the scene/layout hashes was the only text difference).
 
 ## Regression coverage
 
-All **33 tests pass**, covering frozen checkpoint/reference identity, unchanged
+All **34 tests pass**, covering frozen checkpoint/reference identity, unchanged
 normalization, normalized ONNX action parity, rejection of changed artifacts,
 task registration, loaded/unloaded posture limits, upright put-down rules,
 release-before-clearance and arms-down-before-turn gates, shared navigation
@@ -144,6 +144,12 @@ The added native tests exercise the real C++ receiver over localhost UDP,
 including missing/stale/replayed state, CRC/layout mismatch, invalid tracking,
 non-finite values, quaternion/contact validation and future timestamps. They
 also check native startup pose rejection, finite inference and model tampering.
+After excluding training checkpoints from Git, all six C++ profiles were checked
+against a checkout containing only committed bundle files. The Python native
+wrapper also loads all six selections without checkpoints, the DDS simulator
+starts, and native re-export reproduces all three deployment artifacts exactly.
+A regression verifies that checkpoint-free native loading still rejects altered
+runtime artifacts, while checkpoint-based workflows retain strict verification.
 Both full-sequence and standalone-return Viser playback were smoke-tested for
 two simulation steps and exited cleanly. Native desktop viewing and video
 rendering were not exercised in this validation.
