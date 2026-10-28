@@ -1,0 +1,62 @@
+{
+  "postrelease_upright_passed": true,
+  "postrelease_min_pelvis_m": 0.7599812150001526,
+  "postrelease_max_pelvis_m": 0.7815857529640198,
+  "postrelease_max_torso_tilt_deg": 0.28393030166625977,
+  "skill": "put-down",
+  "frames": 1001,
+  "min_joint_margin_rad": 0.16175545148849485,
+  "min_robot_table_contact_m": 0.0,
+  "worst_contact": null,
+  "min_box_table_contact_m": 0.0,
+  "max_held_palm_error_m": 0.024786906288258456,
+  "min_released_robot_box_contact_m": 0.0,
+  "worst_released_robot_box_contact": null,
+  "terminal_posture_passed": true,
+  "max_joint_step_rad": 0.09359431266784668,
+  "max_root_step_m": 0.006702234968543053,
+  "passed": true,
+  "scope": "Kinematic reference checks only; learned dynamics and handoffs require evaluation",
+  "seconds": 20.0,
+  "qp_count": 200,
+  "qp_statuses": {
+    "delta-global": 200
+  },
+  "qp_cross_checks": 21,
+  "qp_max_relative_cost_error": 5.22472846672745e-05,
+  "max_ik_error_m": 0.02739451825618744,
+  "segment_ik_errors": {
+    "hold": {
+      "max_m": 0.024787792935967445,
+      "frame": 5
+    },
+    "place-release": {
+      "max_m": 0.0247877836227417,
+      "frame": 0
+    },
+    "released-stand": {
+      "max_m": 0.011234619654715061,
+      "frame": 18
+    },
+    "clearance-step": {
+      "max_m": 0.012364434078335762,
+      "frame": 40
+    },
+    "lower-arms": {
+      "max_m": 0.02739451825618744,
+      "frame": 40
+    },
+    "arms-down": {
+      "max_m": 2.684548235265538e-05,
+      "frame": 0
+    },
+    "turn-home": {
+      "max_m": 0.0008499199175275862,
+      "frame": 180
+    },
+    "navigation-ready": {
+      "max_m": 2.684548235265538e-05,
+      "frame": 0
+    }
+  }
+}

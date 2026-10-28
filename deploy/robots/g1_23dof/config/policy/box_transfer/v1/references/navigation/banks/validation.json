@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "routes": {
+    "go-to": {
+      "skill": "go-to",
+      "frames": 391,
+      "min_joint_margin_rad": 0.12666035215377802,
+      "min_robot_table_contact_m": 0.0,
+      "worst_contact": null,
+      "min_box_table_contact_m": -1.5011122659325205e-16,
+      "max_held_palm_error_m": 0.0,
+      "min_released_robot_box_contact_m": 0.0,
+      "worst_released_robot_box_contact": null,
+      "terminal_posture_passed": true,
+      "max_joint_step_rad": 0.12318158149719238,
+      "max_root_step_m": 0.010106626898050308,
+      "passed": true,
+      "scope": "Kinematic reference checks only; learned dynamics and handoffs require evaluation",
+      "seconds": 7.8,
+      "qp_count": 78,
+      "qp_statuses": {
+        "delta-global": 78
+      },
+      "qp_cross_checks": 8,
+      "qp_max_relative_cost_error": 2.104699867116726e-05,
+      "max_ik_error_m": 0.0025451325345784426,
+      "segment_ik_errors": {
+        "walk": {
+          "max_m": 0.0025451325345784426,
+          "frame": 195
+        },
+        "stand": {
+          "max_m": 2.578615749371238e-05,
+          "frame": 0
+        }
+      }
+    },
+    "return": {
+      "skill": "return",
+      "frames": 466,
+      "min_joint_margin_rad": 0.12465119878768915,
+      "min_robot_table_contact_m": 0.0,
+      "worst_contact": null,
+      "min_box_table_contact_m": 0.0,
+      "max_held_palm_error_m": 0.0,
+      "min_released_robot_box_contact_m": 0.0,
+      "worst_released_robot_box_contact": null,
+      "terminal_posture_passed": true,
+      "max_joint_step_rad": 0.123524010181427,
+      "max_root_step_m": 0.01028935145586729,
+      "passed": true,
+      "scope": "Kinematic reference checks only; learned dynamics and handoffs require evaluation",
+      "seconds": 9.3,
+      "qp_count": 93,
+      "qp_statuses": {
+        "delta-global": 93
+      },
+      "qp_cross_checks": 10,
+      "qp_max_relative_cost_error": 7.710288455992706e-05,
+      "max_ik_error_m": 0.002655220218002796,
+      "segment_ik_errors": {
+        "return-start": {
+          "max_m": 0.002655220218002796,
+          "frame": 70
+        },
+        "stand": {
+          "max_m": 2.578615749371238e-05,
+          "frame": 0
+        }
+      }
+    }
+  },
+  "lengths": [
+    391,
+    466
+  ],
+  "scope": "Kinematic references only"
+}

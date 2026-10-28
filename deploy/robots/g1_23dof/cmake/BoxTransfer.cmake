@@ -1,0 +1,17 @@
+# Native policy core is shared by hardware and the simulator validator.
+option(BOX_TRANSFER_CORE_ONLY "Build the native policy core without DDS/controller dependencies" OFF)
+set(MUJOCO_ROOT "" CACHE PATH "MuJoCo 3.11 directory containing include/ and libmujoco")
+if(NOT MUJOCO_ROOT)
+  find_package(Python3 COMPONENTS Interpreter QUIET)
+  if(Python3_FOUND)
+    execute_process(COMMAND ${Python3_EXECUTABLE} -c "import pathlib,mujoco; print(pathlib.Path(mujoco.__file__).parent)"
+      OUTPUT_VARIABLE MUJOCO_ROOT OUTPUT_STRIP_TRAILING_WHITESPACE ERROR_QUIET)
+  endif()
+endif()
+find_path(BOX_MUJOCO_INCLUDE mujoco/mujoco.h HINTS ${MUJOCO_ROOT}/include REQUIRED)
+find_library(BOX_MUJOCO_LIBRARY NAMES mujoco libmujoco.so.3.11.0 HINTS ${MUJOCO_ROOT} ${MUJOCO_ROOT}/lib REQUIRED)
+find_package(OpenSSL REQUIRED COMPONENTS Crypto)
+find_package(ZLIB REQUIRED)
+add_library(box_transfer_core SHARED ${PROJECT_SOURCE_DIR}/../../tests/box_transfer_core.cpp)
+target_include_directories(box_transfer_core PUBLIC ${PROJECT_SOURCE_DIR}/include ${ONNXRUNTIME_DIR}/include ${BOX_MUJOCO_INCLUDE})
+target_link_libraries(box_transfer_core PUBLIC ${BOX_MUJOCO_LIBRARY} ${ONNXRUNTIME_DIR}/lib/libonnxruntime.so.1.22.0 OpenSSL::Crypto ZLIB::ZLIB)

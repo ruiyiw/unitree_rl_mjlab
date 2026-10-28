@@ -1,0 +1,30 @@
+{
+  "navigation": {
+    "input_width": 156,
+    "output_width": 23,
+    "onnx_sha256": "81c3de0e4f00abc614e4fb7e8487e10f6bd84b050ba56aa51b3840cb32361f40",
+    "test_inputs": 257,
+    "max_absolute_error": 7.62939453125e-06
+  },
+  "take": {
+    "input_width": 180,
+    "output_width": 23,
+    "onnx_sha256": "228be8db103ef502d031b7b023ea4ad517a43664707a2ef6ac240337c733beaf",
+    "test_inputs": 257,
+    "max_absolute_error": 4.291534423828125e-06
+  },
+  "carry": {
+    "input_width": 180,
+    "output_width": 23,
+    "onnx_sha256": "ca618a8125d99f5219c0a5ff67b8e7335e3c5c516fe5550d9a94018d9a9e1d25",
+    "test_inputs": 257,
+    "max_absolute_error": 6.198883056640625e-06
+  },
+  "put-down": {
+    "input_width": 180,
+    "output_width": 23,
+    "onnx_sha256": "e234fd152da4be6ac9f85febcca21d2dcbada2e1990cc7546037716d304c1519",
+    "test_inputs": 257,
+    "max_absolute_error": 2.9355287551879883e-06
+  }
+}

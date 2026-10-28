@@ -246,3 +246,12 @@ The preserved balance task, frozen checkpoint evaluation, and matched comparison
 `Mjlab-Human-Push-Recovery-G1-23DoF` and its frozen checkpoint, ONNX actor,
 23-DoF hardware profile, and C++ simulation validator are included. See
 [HUMAN_PUSH.md](HUMAN_PUSH.md) for playback, validation and deployment.
+
+## G1 23-DoF box transfer
+
+The full five-stage box-transfer controller and all five independent phases are
+included, using four frozen actors (navigation is shared by go-to and return).
+The bundle contains checkpoints, reference motions, normalized ONNX exports,
+the C++ hardware FSM, six deployment profiles and a measured-state bridge.
+See [BOX_TRANSFER.md](BOX_TRANSFER.md) for physical-robot launch commands,
+tracking requirements, simulation playback and deployment validation.

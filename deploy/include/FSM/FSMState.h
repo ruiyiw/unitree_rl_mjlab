@@ -57,6 +57,7 @@ public:
     {
         lowstate->update();
         if(keyboard) keyboard->update();
+        lowcmd->lock(); // Pair with unlockAndPublish in post_run.
     }
 
     void post_run()

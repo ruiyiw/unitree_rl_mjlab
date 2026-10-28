@@ -1,0 +1,50 @@
+{
+  "skill": "take",
+  "frames": 796,
+  "min_joint_margin_rad": 0.17185730628967283,
+  "min_robot_table_contact_m": 0.0,
+  "worst_contact": null,
+  "min_box_table_contact_m": -1.5011122659325205e-16,
+  "max_held_palm_error_m": 0.027053096899304734,
+  "min_released_robot_box_contact_m": 0.0,
+  "worst_released_robot_box_contact": null,
+  "terminal_posture_passed": true,
+  "max_joint_step_rad": 0.1354239583015442,
+  "max_root_step_m": 0.007708813063800335,
+  "passed": true,
+  "scope": "Kinematic reference checks only; learned dynamics and handoffs require evaluation",
+  "seconds": 15.9,
+  "qp_count": 159,
+  "qp_statuses": {
+    "delta-global": 159
+  },
+  "qp_cross_checks": 18,
+  "qp_max_relative_cost_error": 1.0546186790444213e-05,
+  "max_ik_error_m": 0.03779248893260956,
+  "segment_ik_errors": {
+    "raise": {
+      "max_m": 0.03779248893260956,
+      "frame": 55
+    },
+    "ready": {
+      "max_m": 0.018218576908111572,
+      "frame": 0
+    },
+    "approach": {
+      "max_m": 0.01119507011026144,
+      "frame": 39
+    },
+    "grasp-lift": {
+      "max_m": 0.024787792935967445,
+      "frame": 151
+    },
+    "turn-right": {
+      "max_m": 0.02681109309196472,
+      "frame": 39
+    },
+    "hold": {
+      "max_m": 0.025578690692782402,
+      "frame": 0
+    }
+  }
+}

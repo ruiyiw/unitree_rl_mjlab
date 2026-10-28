@@ -1,0 +1,87 @@
+FSM:
+  _:
+    Passive:
+      id: 1
+      type: BoxTransferPassive
+    BoxTransferPrepare:
+      id: 7
+      type: BoxTransfer
+    BoxTransfer:
+      id: 8
+      type: BoxTransfer
+  Passive:
+    transitions:
+      BoxTransferPrepare: LT + up.on_pressed
+    mode:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 0
+    - 0
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 0
+    - 0
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 0
+    - 0
+    kd:
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 0
+    - 0
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 0
+    - 0
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
+    - 0
+    - 0
+  BoxTransferPrepare:
+    prepare: true
+    transitions:
+      Passive: LT + B.on_pressed
+      BoxTransfer: RT + A.on_pressed
+  BoxTransfer:
+    prepare: false
+    policy: go-to
+    policy_dir: config/policy/box_transfer/v1
+    state_port: 17600
+    state_timeout_s: 0.1
+    transitions:
+      Passive: LT + B.on_pressed

@@ -131,6 +131,7 @@ inline po::variables_map helper(int argc, char** argv)
         ("log", "record log file")
         ("network,n", po::value<std::string>()->default_value(""), "dds network interface")
         ("config,c", po::value<std::string>(), "controller configuration YAML")
+        ("check-box-transfer", "validate box-transfer profile and bundle without connecting DDS")
         ;
 
     po::variables_map vm;

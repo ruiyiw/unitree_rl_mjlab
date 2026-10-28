@@ -1,0 +1,34 @@
+{
+  "skill": "carry",
+  "frames": 391,
+  "min_joint_margin_rad": 0.1347584217071533,
+  "min_robot_table_contact_m": 0.0,
+  "worst_contact": null,
+  "min_box_table_contact_m": 0.0,
+  "max_held_palm_error_m": 0.029737475385783425,
+  "min_released_robot_box_contact_m": 0.0,
+  "worst_released_robot_box_contact": null,
+  "terminal_posture_passed": true,
+  "max_joint_step_rad": 0.12078595161437988,
+  "max_root_step_m": 0.010506064631044865,
+  "passed": true,
+  "scope": "Kinematic reference checks only; learned dynamics and handoffs require evaluation",
+  "seconds": 7.8,
+  "qp_count": 78,
+  "qp_statuses": {
+    "delta-global": 78
+  },
+  "qp_cross_checks": 8,
+  "qp_max_relative_cost_error": 6.616988123096163e-05,
+  "max_ik_error_m": 0.028994737192988396,
+  "segment_ik_errors": {
+    "carry": {
+      "max_m": 0.028994737192988396,
+      "frame": 46
+    },
+    "hold": {
+      "max_m": 0.02556549943983555,
+      "frame": 0
+    }
+  }
+}

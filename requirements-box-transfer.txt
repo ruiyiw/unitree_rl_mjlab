@@ -1,0 +1,7 @@
+# Separate mjlab 1.6 runtime; do not install stock setup.py into this environment.
+-r requirements-balance.txt
+onnx==1.23.2
+pytest==9.1.1
+imageio
+imageio-ffmpeg
+Pillow

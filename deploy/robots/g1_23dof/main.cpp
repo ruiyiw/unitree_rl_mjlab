@@ -4,6 +4,7 @@
 #include "FSM/State_RLBase.h"
 #include "State_Mimic.h"
 #include "State_HumanPushRecovery.h"
+#include "State_BoxTransfer.h"
 
 std::unique_ptr<LowCmd_t> FSMState::lowcmd = nullptr;
 std::shared_ptr<LowState_t> FSMState::lowstate = nullptr;
@@ -34,6 +35,15 @@ int main(int argc, char** argv)
     std::cout << " --- Unitree Robotics --- \n";
     std::cout << "     G1-23dof Controller \n";
 
+    if (vm.count("check-box-transfer")) {
+        auto cfg=param::config["FSM"]["BoxTransfer"];
+        if(!cfg)throw std::runtime_error("Select a box-transfer profile with --config");
+        box_transfer::Controller core(param::parser_policy_dir(cfg["policy_dir"].as<std::string>()));
+        core.reset(BoxTransferSession::select(cfg["policy"].as<std::string>()));
+        std::cout << "Box-transfer profile and immutable artifacts validated; no DDS commands sent.\n";
+        return 0;
+    }
+
     // Unitree DDS Config
     unitree::robot::ChannelFactory::Instance()->Init(0, vm["network"].as<std::string>());
 
@@ -49,7 +59,7 @@ int main(int argc, char** argv)
     auto fsm = std::make_unique<CtrlFSM>(param::config["FSM"]);
     fsm->start();
 
-    std::cout << "Press [L2 + Up] to enter FixStand mode.\n";
+    std::cout << "Press [L2 + Up] to prepare the selected standing/reference pose.\n";
     std::cout << "And then press [R2 + A] to start controlling the robot.\n";
     std::cout << "Press [L2 + B] to return to Passive mode.\n";
 

@@ -49,7 +49,9 @@ public:
     {
         // Start From State_Passive
         currentState = states[0];
+        currentState->pre_run();
         currentState->enter();
+        currentState->post_run();
 
         fsm_thread_ = std::make_shared<unitree::common::RecurrentThread>(
             "FSM", 0, this->dt * 1e6, &CtrlFSM::run_, this);
@@ -105,7 +107,9 @@ private:
                     spdlog::info("FSM: Change state from {} to {}", currentState->getStateString(), state->getStateString());
                     currentState->exit();
                     currentState = state;
+                    currentState->pre_run();
                     currentState->enter();
+                    currentState->post_run();
                     break;
                 }
             }

@@ -3,15 +3,24 @@ project(g1_controller)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(Boost REQUIRED COMPONENTS program_options)
-find_package(yaml-cpp REQUIRED)
-find_package(ZLIB REQUIRED)
 
 if(CMAKE_SYSTEM_PROCESSOR STREQUAL "x86_64")
     set(ONNXRUNTIME_DIR "${PROJECT_SOURCE_DIR}/../../thirdparty/onnxruntime-linux-x64-1.22.0")
 elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
     set(ONNXRUNTIME_DIR "${PROJECT_SOURCE_DIR}/../../thirdparty/onnxruntime-linux-aarch64-1.22.0")
 endif()
+
+include(cmake/BoxTransfer.cmake)
+if(BOX_TRANSFER_CORE_ONLY)
+  return()
+endif()
+find_package(Boost REQUIRED COMPONENTS program_options)
+find_package(yaml-cpp REQUIRED)
+find_package(ZLIB REQUIRED)
+find_package(Eigen3 REQUIRED)
+find_package(fmt REQUIRED)
+find_package(spdlog REQUIRED)
+find_package(unitree_sdk2 REQUIRED)
 
 include_directories(
   /usr/include/eigen3
@@ -34,11 +43,14 @@ link_libraries(
   rt
   pthread
   Boost::program_options
-  yaml-cpp
-  fmt
+  yaml-cpp::yaml-cpp
   ${ONNXRUNTIME_DIR}/lib/libonnxruntime.so.1.22.0
   cnpy_lib
   ZLIB::ZLIB
+  Eigen3::Eigen
+  fmt::fmt
+  spdlog::spdlog
+  box_transfer_core
 )
 
 file(GLOB_RECURSE ADD_SRC_LIST
@@ -49,3 +61,5 @@ add_library(${PROJECT_NAME}_lib ${ADD_SRC_LIST})
 link_libraries(${PROJECT_NAME}_lib)
 
 add_executable(g1_ctrl main.cpp)
+# Headless loopback DDS simulator for exercising the unmodified hardware FSM.
+add_executable(box_transfer_sim box_transfer_sim.cpp)
